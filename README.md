@@ -18,7 +18,7 @@
 
  <!--기술스택-->
   ## Skills Used 🍆
-  <img src="https://img.shields.io/badge/python-3776AB?style=flat&logo=arduino&logoColor=white"/>
+  <img src="https://img.shields.io/badge/python-3776AB?style=flat&logo=python&logoColor=white"/>
   <img src="https://img.shields.io/badge/Raspberrypi-A22846C?style=flat&logo=raspberrypi&logoColor=white"/>
   <img src="https://img.shields.io/badge/HTML-E34F26?style=flat&logo=html5&logoColor=white">
 
