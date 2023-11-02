@@ -1,7 +1,6 @@
 # BlackCat
 <!-- 헤더 -->
 
-![transparent](https://capsule-render.vercel.app/api?type=transparent&fontColor=8904B1&text=SmartPot&height=150&fontSize=60&desc=Capstone2023_gbsw&descAlignY=75&descAlign=60)
 <div align= justify>
 <!--소개-->
 
