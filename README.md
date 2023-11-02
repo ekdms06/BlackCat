@@ -6,7 +6,7 @@
 <!--소개-->
 
 ## Introduction 🍇
- Capstone2023_SmartPot
+ Capstone2023_BlackCat
 <br>I'm going to develop a smart pot with automatic sensors😎
 <br/><br/>
  
