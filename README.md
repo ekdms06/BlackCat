@@ -22,7 +22,7 @@
   <img src="https://img.shields.io/badge/python-3776AB?style=flat&logo=python&logoColor=white"/>
   <img src="https://img.shields.io/badge/flask-000000?style=flat&logo=flask&logoColor=white"/>
   <img src="https://img.shields.io/badge/HTML-E34F26?style=flat&logo=html5&logoColor=white">
-  <img src="https://img.shields.io/badge/css-1572B6?style=flat&logo=css&logoColor=white">
+  <img src="https://img.shields.io/badge/css-1572B6?style=flat&logo=css3&logoColor=white">
 
 <br/><br/>
 
