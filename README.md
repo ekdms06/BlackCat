@@ -7,7 +7,7 @@
 
 ## Introduction 🍇
  Capstone2023_BlackCat
-<br>I'm going to develop a smart pot with automatic sensors😎
+<br>I'm going to make an artificial intelligence for Uiseong😎
 <br/><br/>
  
  ## member 👫
