@@ -29,7 +29,7 @@
  <!--일정계획 -->
  
   ## plan ⏰ 
-  <img src="https://github.com/ekdms06/BlackCat/assets/129836696/4d2ebe7b-64f1-4af1-b2c9-761d7f5d3ac1" width="700" height="300"/>
+  <img src="https://github.com/ekdms06/BlackCat/assets/129836696/4d2ebe7b-64f1-4af1-b2c9-761d7f5d3ac1" width="700" height="200"/>
 
 
  <br/>
