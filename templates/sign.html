@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            background: url('/static/background.jpg') no-repeat center center fixed; 
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+        }
+        .signup-form {
+            width: 300px;
+            margin: auto;
+            font-family: Tahoma, Geneva, sans-serif;
+        }
+        .signup-form h2 {
+            text-align: center;
+            color: #4d4d4d;
+            font-size: 24px;
+            padding: 20px 0 20px 0;
+        }
+        .signup-form input[type="text"],
+        .signup-form input[type="password"],
+        .signup-form input[type="tel"] {
+            width: 100%;
+            padding: 20px;
+            border: 1px solid #dddddd;
+            margin-bottom: 15px;
+            box-sizing:border-box;
+            background-color: rgba(255,255,255,0.5);
+        }
+        .signup-form input[type="submit"] {
+            width: 100%;
+            padding: 15px;
+            background-color: #535b63;
+            border: 0;
+            box-sizing: border-box;
+            cursor: pointer;
+            font-weight: bold;
+            color: #ffffff;
+        }
+        .error {
+            color: red;
+        }
+    </style>
+    <script>
+        function validateForm() {
+            var password = document.getElementById("password").value;
+            var confirmPassword = document.getElementById("confirm-password").value;
+            if (password != confirmPassword) {
+                document.getElementById("error-message").innerText = "Passwords do not match.";
+                return false;
+            } else {
+                document.getElementById("error-message").innerText = "";
+                return true;
+            }
+        }
+        
+        function autoHyphenPhone() {
+            var number = document.getElementById("phone").value;
+            number = number.replace(/[^0-9]/g, "");
+            var tmp = "";
+            if( number.length < 4) {
+                return number;
+            } else if(number.length < 7) {
+                tmp += number.substr(0, 3);
+                tmp += "-";
+                tmp += number.substr(3);
+                return tmp;
+            } else if(number.length < 11) {
+                tmp += number.substr(0, 3);
+                tmp += "-";
+                tmp += number.substr(3, 3);
+                tmp += "-";
+                tmp += number.substr(6);
+                return tmp;
+            } else {
+                tmp += number.substr(0, 3);
+                tmp += "-";
+                tmp += number.substr(3, 4);
+                tmp += "-";
+                tmp += number.substr(7);
+                return tmp;
+            }
+            return number;
+        }
+
+        window.onload = function() {
+            var phoneInput = document.getElementById("phone");
+            phoneInput.oninput = function() {
+                this.value = autoHyphenPhone();
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="signup-form">
+        <h2>Sign Up</h2>
+        <form action="{{ url_for('member_ok') }}" method="post" onsubmit="return validateForm()">
+            <input type="text" name="id" placeholder="id" required="required" autocomplete="off" />
+            <input type="password" id="password" name="password" placeholder="Password" required="required" />
+            <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm Password" required="required" />
+            <input type="tel" id="phone" name="phone" placeholder="Phone Number" required="required" autocomplete="off" />
+            <input type="text" name="room" placeholder="Room number" required="required" autocomplete="off" />
+            {% if error_message %}
+                <p id="error-message" class="error">{{ error_message }}</p>
+            {% endif %}
+            <input type="submit" value="Sign Up" />
+        </form>
+
+    </div>
+</body>
+</html>

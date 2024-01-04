@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+	<meta name="robots" content="index, follow">
+	<link rel="shortcut icon" type="image/png" href="{{ url_for('static', filename='img/favicon-16x16.png') }}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.min.css') }}?1665">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}?4812">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/animate.min.css') }}?8707">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/all.min.css') }}">
+	
+	
+    <title>About</title>
+
+
+    
+<!-- Analytics -->
+ 
+<!-- Analytics END -->
+    
+</head>
+<body data-clean-url="true">
+
+<!-- Preloader -->
+<div id="page-loading-blocs-notifaction" class="page-preloader"></div>
+<!-- Preloader END -->
+
+
+<!-- Main container -->
+<div class="page-container">
+
+	<!-- nav바 부분 -->
+<!-- bloc-0 -->
+<div class="bloc none l-bloc" id="bloc-0">
+	<div class="container bloc-no-padding">
+		<div class="row mt-lg-3 mb-lg-3 mt-1 mb-1 mt-sm-2 mb-sm-2 mt-md-3 mb-md-3 ps-2 pe-2 ps-lg-3 pe-lg-3">
+			<div class="align-self-center order-sm-1 order-1 col-4 ps-0 pe-0 col-lg-2 col-md-2 col-sm-4">
+				<p class="mb-0">
+					<picture>
+						<source type="image/webp" srcset="{{ url_for('static', filename='img/black_cat.webp') }}">
+						<img class="img-fluid img-style" src="{{ url_for('static', filename='img/black_cat.png') }}" alt="black_cat" width="40" height="41">
+					</picture>
+					<a class="mini-text-logo bold object-hidden" href="{{ url_for('index') }}">검은고양이</a><br>
+					
+				</p>
+			</div>
+			<div class="align-self-center order-sm-3 order-lg-2 order-md-2 order-3 col-lg-8 col-md-8 pe-0 ps-0 text-sm-end col-sm-8 col-8">
+				<nav class="navbar navbar-light row flex-column navbar-expand-md hover-open-submenu navigation-toggle-right" role="navigation">
+					<div class="container-fluid flex-column">
+						<button id="nav-toggle" type="button" class="ui-navbar-toggler navbar-toggler border-0 p-0" aria-expanded="false" aria-label="Toggle navigation" data-bs-toggle="collapse" data-bs-target=".navbar-10760">
+							<span class="navbar-toggler-icon"><svg height="32" viewBox="0 0 32 32" width="32"><path data-custom-classes="" class="svg-menu-icon   " d="m2 9h28m-28 7h28m-28 7h28"></path></svg></span>
+						</button>
+						<div class="collapse navbar-collapse navbar-36370  fullscreen-nav open-down navbar-10760">
+								<ul class="site-navigation nav navbar-nav mx-auto justify-content-center">
+									<li class="nav-item">
+										<a href="{{ url_for('back_to_index') }}" class="nav-link">Home</a>
+									</li>
+									<li class="nav-item">
+										<a href="{{ url_for('about') }}" class="nav-link a-btn">About</a>
+									</li>
+									<li class="nav-item">
+										<a href="{{ url_for('ai') }}" class="a-btn nav-link">Ai</a>
+									</li>
+									<li class="nav-item">
+										<a href="{{ url_for('login') }}" class="nav-link a-btn">로그인</a>
+									</li>
+									<li class="nav-item">
+										<a href="{{ url_for('signup') }}" class="nav-link a-btn">회원가입</a>
+									</li>
+								</ul>
+							</div>
+					</div>
+				</nav>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- bloc-0 END -->
+
+			<!-- body 부분 -->
+<!-- bloc-2 -->
+<div class="bloc l-bloc " id="bloc-2">
+	<div class="container bloc-lg-lg">
+		<div class="row">
+			<div class="col pb-lg-5">
+				<h1 class="mb-4 text-lg-center">
+					구현형태(Layout)
+				</h1>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-8 offset-sm-2 offset-md-0 col-md-5 order-md-0 order-1 offset-lg-0 col-lg-4">
+				<div class="mx-auto d-block blocsapp-device blocsapp-device-iphone11 iphone11-white">
+					<picture>
+						<source type="image/webp" srcset="{{ url_for('static', filename='img/lazyload-ph.png') }}" data-srcset="{{ url_for('static', filename='img/iphone-screen-11.webp') }}">
+						<img src="{{ url_for('static', filename='img/lazyload-ph.png') }}" data-src="{{ url_for('static', filename='img/iphone-screen-11.png') }}" class="img-fluid lazyload" alt="iphone screen-11" width="294" height="637">
+					</picture>
+				</div>
+			</div>
+			<div class="align-self-center col-md-7 col-lg-7 offset-lg-1">
+				<picture>
+					<source type="image/webp">
+					<img src="{{ url_for('static', filename='img/10077.jpg') }}" class="img-fluid mx-auto d-block picture-01 img-margin-top lazyload" alt="스크린샷%202023 12-04%20오후%209.48.38" width="655" height="433">
+				</picture>				
+				<h1 class="text-center text-md-start pt-lg-5">
+					어르신 비상웹캠
+				</h1>
+				<h4 class="mg-md float-none text-center text-md-start h3-style">
+					어른신 비상앱은 시간 설정 및 동작 설정을 하여 이상이 있을때 자동적으로 119및 경찰서로 바로 신고를 하고 보호자에<br>비상 알림을 알리는 시스템입니다.
+				</h4>
+				<div class="text-center d-block text-lg-start text-md-start">
+					<a href="{{ url_for('static', filename='styles.css') }}" class="btn btn-lg btn-wire">Get Started</a>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- bloc-2 END -->
+
+
+
+<!-- 서비스 소계를 글로 설명 -->
+<!-- bloc-6 -->
+<div class="bloc l-bloc" id="bloc-6">
+	<div class="container bloc-lg bloc-sm-lg">
+		<div class="row">
+			<div class="col text-start">
+				<h4 class="h4-style">
+					웹 앱 : 웹 앱을 통해 각종 다양한 기능을 통한 서비스를 사용할 수 있게 하는 GUI 구현 회원가입 하는 과정에서 개인정보를 입력하여 SOS 기능을 보호자에게 전송하여 웹 앱의 알림 또는 메시지로 인증 메시지를 전송하도록 해주는 형태로 구현 예정<br>CNN 모델을 사용하여 쓰러진 사람을 감지하고 구별하는 시스템 구현<br>CCTV 캠을 사용하여 실시간 모니터링 및 응급조치 알림 기능 제공<br>캠을 통해 쓰러진 긴급한 노인을 감지하여 웹 앱과 통신을 하여 보호자에게 전송하는 기능을 구현하였습니다.<br>
+				</h4>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- bloc-6 END -->
+
+
+<!-- section 1부분 erd 다이어 그램으로 database 구조도 설명 -->
+<!-- bloc-7 -->
+<div class="bloc l-bloc" id="bloc-7">
+	<div class="container bloc-lg">
+		<div class="row">
+			<div class="col pb-lg-5">
+				<h1 class="mb-4 text-lg-center">
+					데이터베이스 설계 (E-R Diagram)
+				</h1>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col text-start">
+				<!-- erd 다이어 그램 이미지 -->
+				<picture>
+					<source type="image/webp">
+					<img src="{{ url_for('static', filename='img/erd_database.webp') }}" class="img-fluid mx-auto d-block lazyload" alt="스크린샷%202023 12-04%20오후%2010.10.18" width="1140" height="639">
+				</picture>				
+			</div>
+		</div>
+	</div>
+</div>
+<!-- bloc-7 END -->
+
+<!-- 개발 프로세스 부분 -->
+<!-- bloc-8 -->
+<div class="bloc l-bloc" id="bloc-8">
+	<div class="container bloc-lg">
+		<div class="row">
+			<div class="col pb-lg-5">
+				<h1 class="mb-4 text-lg-center h1-margin-top">
+					개발 시간분배
+				</h1>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col text-start">
+				<!-- 이미지 개발프로세스 -->
+				<picture>
+					<source type="image/webp">
+					<img src="{{ url_for('static', filename='img/시간분배.png') }}" class="img-fluid mx-auto d-block picture-01 lazyload" alt="스크린샷%202023 12-04%20오후%2010.15.27" width="1140" height="351">
+				</picture>				
+			</div>
+		</div>
+	</div>
+</div>
+<!-- bloc-8 END -->
+
+<!-- bloc-9 -->
+<div class="bloc l-bloc" id="bloc-9">
+	<div class="container bloc-no-padding-lg">
+		<div class="row">
+			<div class="col text-start">
+				<h4 class="h4-7-style mb-lg-5">
+					<!-- 개발 프로세스를 글로 설명하는 부분 -->
+					09월 18일 ~ 9월 30일까지 CNN 모델을 활용한 인공지능 프로그램 개발 수행<br>10월 01일 ~ 10월 5일까지 개발한 인공지능 프로그램 테스트 및 버그 수정<br>10월 07일 ~ 10월 14일까지 웹개발 및 웹페이지 디자인 구현 및 골격 개발 수행<br>10월 23일 ~ 11월 3일까지 개발한 웹디자인을 통하여 AWS로 실제 배포 예정<br>11월 10일 ~ 11월 24일까지 실제 환경에서 각종 다양한 상황에서 프로그램 테스트 수행<br>11월 27일 ~ 12월 8일까지 임베디드와 연동하여 테스트 및 Flask로 구현한 요청 및 응답 테스트 수행<br>12월 15일 ~ 12월 29일까지 검토 및 최종 테스트 후 프로젝트와 최종 발표자료 제출<br>
+				</h4>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- bloc-9 END -->
+
+
+<!-- footer부분 프로젝트의 기대효과 -->
+<!-- bloc-10 -->
+<div class="bloc bgc-6833 d-bloc" data-bs-theme="dark" id="bloc-10">
+	<div class="container bloc-lg">
+		<div class="row">
+			<div class="text-start col-md-9 col-lg-6 align-self-start">
+				<p class="mini-subtitle bold tc-5545">
+					expected benefit
+				</p>
+				<h1 class="bold tc-7747 mx-auto d-block">
+					기대효과
+				</h1>
+			</div>
+			<div class="text-start col-md-9 col-lg-6">
+				<p class="mini-large-p mt-3 mt-lg-0 mb-0 tc-3131 p-18-style">
+					❏ 신속하게 노인의 생명의 지장이 없도록 빠른 대처를 할 수 있다.&nbsp;<br>❏ 사람들의 안전을 인공지능 서비스가 모니터링하여 더 큰 사고 예방❏ 실시간 모니터링으로 인력 및 시간을 절약할 수 있다. <br>❏ 노인 복지 혜택에 포함하여 보험이나 다른 어떠한 것과도 노인 복 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 지 분야에서 이점이 될 수 있다.
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- bloc-10 END -->
+
+<!-- ScrollToTop Button -->
+<button aria-label="Scroll to top button" class="bloc-button btn btn-d scrollToTop" onclick="scrollToTarget('1',this)"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 32 32"><path class="scroll-to-top-btn-icon" d="M30,22.656l-14-13-14,13"/></svg></button>
+<!-- ScrollToTop Button END-->
+
+
+</div>
+<!-- Main container END -->
+    
+
+
+<!-- Additional JS -->
+<script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}?312"></script>
+<script src="{{ url_for('static', filename='js/blocs.min.js') }}?742"></script>
+<script src="{{ url_for('static', filename='js/lazysizes.min.js') }}" defer></script>
+<!-- Additional JS END -->
+
+
+
+</body>
+</html>

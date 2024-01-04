@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        tr:nth-child(odd) {
+            background-color: #fff;
+        }
+
+        .board-title {
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .view-button {
+            cursor: pointer;
+            color: blue;
+            text-decoration: none; /* 밑줄 제거 */
+        }
+
+        .view-button:hover {
+            color: red; /* 오버할 때 색상 변경 */
+        }
+    </style>
+</head>
+<body>
+    <div class="board-title">보호자 관리 화면</div>
+    <table>
+        <thead>
+            <tr>
+                <th>방호수</th>
+                <th>아이디</th>
+                <th>전화번호</th>
+                <th>스크린</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in users %}
+            <tr>
+            <td>{{ user.room }}</td>
+            <td>{{ user.id }}</td>
+            <td>{{ user.phone }}</td>
+            <td class="view-button" onclick="goToWebView('webview.html')">보기</td>
+            </tr>
+            {% endfor %}
+            </tbody>
+    </table>
+
+    <script>
+        function goToWebView(page) {
+            window.location.href = page;
+        }
+    </script>
+</body>
+</html>

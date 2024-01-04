@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+	<meta name="robots" content="index, follow">
+	<link rel="shortcut icon" type="image/png" href="{{ url_for('static', filename='img/black_cat.png') }}">
+
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.min.css') }}?1665">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}?4812">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/animate.min.css') }}?8707">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/all.min.css') }}">
+	
+
+	
+    <title>Ai</title>
+
+	<style>
+        .js {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+		.custom-background {
+         background-color: black; /* Change this to the desired shade of gray */
+      }
+      * {
+         margin: 0;
+         padding: 0;
+         font-family: sans-serif;
+      }
+      
+      body {
+         align-items: center;
+         justify-content: center;
+         min-height: 100vh;
+      }
+      
+      .tele {
+         position: relative;
+         width: 1000px;
+         height: 560px;
+         background: #121212;
+         border-radius: 20px;
+         margin-top: 80px;
+         margin-bottom: 150px;
+         left: 20%;
+      }
+      
+      .screen {
+         position: absolute;
+         bottom: 20px;
+         top: 20px;
+         right: 6px;
+         left: 6px;
+         background-color: #fff;
+         overflow: hidden;
+         border-radius: 20px;
+      }
+      
+      .stand,
+      .centered {
+         position: absolute;
+         left: 50%;
+         transform: translateX(-50%);
+         width: 10px;
+      }
+      
+      .stand {
+         border-bottom: 90px solid #000;
+         border-left: 13vw solid transparent; /* Use vw for responsive left border */
+         border-right: 13vw solid transparent; /* Use vw for responsive right border */
+      }
+      
+      .centered {
+         bottom: 0;
+         border-bottom: 90px solid #000;
+         border-left: 13vw solid transparent; /* Use vw for responsive left border */
+         border-right: 13vw solid transparent; /* Use vw for responsive right border */
+      }
+      
+      @media (max-width: 1200px) {
+         .tele {
+            width: 80%;
+            left: 10%;
+         }
+      
+         .stand {
+            border-left: 150px solid transparent;
+            border-right: 150px solid transparent;
+         }
+      }
+      
+      @media (max-width: 992px) {
+         .tele {
+            width: 90%;
+            left: 5%;
+         }
+      
+         .stand {
+            border-left: 100px solid transparent;
+            border-right: 100px solid transparent;
+         }
+      }
+      
+      @media (max-width: 768px) {
+         .tele {
+            width: 90%;
+            left: 5%;
+         }
+      
+         .stand {
+            border-left: 50px solid transparent;
+            border-right: 50px solid transparent;
+         }
+      }
+    </style>
+    
+<!-- Analytics -->
+ 
+<!-- Analytics END -->
+    
+</head>
+<body data-clean-url="true">
+
+<!-- Preloader -->
+<div id="page-loading-blocs-notifaction" class="page-preloader"></div>
+<!-- Preloader END -->
+
+<!-- nav바 부분 -->
+<!-- Main container -->
+<div class="page-container">
+    
+<!-- bloc-0 -->
+<div class="bloc none l-bloc" id="bloc-0">
+	<div class="container bloc-no-padding">
+		<div class="row mt-lg-3 mb-lg-3 mt-1 mb-1 mt-sm-2 mb-sm-2 mt-md-3 mb-md-3 ps-2 pe-2 ps-lg-3 pe-lg-3">
+			<div class="align-self-center order-sm-1 order-1 col-4 ps-0 pe-0 col-lg-2 col-md-2 col-sm-4">
+				<p class="mb-0">
+					<picture>
+						<source type="image/webp" srcset="{{ url_for('static', filename='img/black_cat.webp') }}">
+						<img class="img-fluid img-style" src="{{ url_for('static', filename='img/black_cat.png') }}" alt="black_cat" width="40" height="41">
+					</picture>
+					<a class="mini-text-logo bold object-hidden" href="{{ url_for('main') }}">검은고양이</a><br>					
+				</p>
+			</div>
+			<div class="align-self-center order-sm-3 order-lg-2 order-md-2 order-3 col-lg-8 col-md-8 pe-0 ps-0 text-sm-end col-sm-8 col-8">
+				<nav class="navbar navbar-light row flex-column navbar-expand-md hover-open-submenu navigation-toggle-right" role="navigation">
+					<div class="container-fluid flex-column">
+						<button id="nav-toggle" type="button" class="ui-navbar-toggler navbar-toggler border-0 p-0" aria-expanded="false" aria-label="Toggle navigation" data-bs-toggle="collapse" data-bs-target=".navbar-10760">
+							<span class="navbar-toggler-icon"><svg height="32" viewBox="0 0 32 32" width="32"><path data-custom-classes="" class="svg-menu-icon   " d="m2 9h28m-28 7h28m-28 7h28"></path></svg></span>
+						</button>
+						<div class="collapse navbar-collapse navbar-36370 fullscreen-nav open-down navbar-10760">
+							<ul class="site-navigation nav navbar-nav mx-auto justify-content-center">
+								<li class="nav-item">
+									<a href="{{ url_for('back_to_index') }}" class="nav-link">Home</a>
+								</li>
+								<li class="nav-item">
+									<a href="{{ url_for('about') }}" class="nav-link a-btn">About</a>
+								</li>
+								<li class="nav-item">
+									<a href="{{ url_for('ai') }}" class="a-btn nav-link">Ai</a>
+								</li>
+								{% if session['username'] %}
+									<li class="nav-item">
+										<a class="nav-link a-btn">환영합니다, {{ session['username'] }}님!</a>
+									</li>
+									<li class="nav-item">
+										<a href="{{ url_for('logout') }}" class="nav-link a-btn">로그아웃</a>
+									</li>
+								{% else %}
+									<li class="nav-item">
+										<a href="{{ url_for('login') }}" class="nav-link a-btn">로그인</a>
+									</li>
+									<li class="nav-item">
+										<a href="{{ url_for('signup') }}" class="nav-link a-btn">회원가입</a>
+									</li>
+								{% endif %}
+							</ul>
+						</div>
+					</div>
+				</nav>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- bloc-0 END -->
+
+
+<!-- body부분  -->
+<!-- bloc-10 -->
+
+
+<!--<div class="bloc l-bloc" id="bloc-7">
+    <div class="container bloc-lg">
+        <div class="row">
+            <div class="col text-start">
+                <div style="position: relative; width: 640px; height: 480px;">
+                    <picture style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+                        <source type="image/webp">
+                        <img src="{{ url_for('static', filename='img/KakaoTalk_20231229_093638266.png') }}" class="img-fluid mx-auto d-block lazyload" alt="스크린샷%202023 12-04%20오후%2010.10.18" width="1000" height="720">
+                    </picture>
+                    <img src="{{ url_for('video_feed') }}" width="640" height="480">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>-->
+
+<div class="tele">
+	<div class="screen">
+	   <img src="{{ url_for('video_feed') }}" style="display: block; margin: 0 auto; width: 1000px; height: 550px;">
+	</div>
+ </div>
+ 
+ <div class="stand centered"></div>
+
+
+<!-- bloc-10 END -->
+
+<!-- ScrollToTop Button -->
+<button aria-label="Scroll to top button" class="bloc-button btn btn-d scrollToTop" onclick="scrollToTarget('1',this)"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 32 32"><path class="scroll-to-top-btn-icon" d="M30,22.656l-14-13-14,13"/></svg></button>
+<!-- ScrollToTop Button END-->
+
+<!-- footer 부분 -->
+<!-- bloc-5 -->
+<div class="bloc bgc-5803 d-bloc" id="bloc-5">
+	<div class="container bloc-md-lg">
+		<div class="row row-padding-top">
+			<div class="offset-md-2 col-6 col-md-2 col-sm-3">
+				<div class="text-center">
+					<span class="fab fa-twitter-square icon-xl"></span>
+				</div>
+			</div>
+			<div class="colㄹ-6 col-md-2 col-sm-3">
+				<div class="text-center">
+					<span class="fab fa-facebook-square icon-xl"></span>
+				</div>
+			</div>
+			<div class="col-6 col-md-2 col-sm-3">
+				<div class="text-center">
+					<span class="fab fa-instagram icon-xl"></span>
+				</div>
+			</div>
+			<div class="col-6 col-md-2 col-sm-3">
+				<div class="text-center">
+					<span class="fa fa-envelope-square icon-xl"></span>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- bloc-5 END -->
+
+</div>
+<!-- Main container END -->
+    
+
+
+<!-- Additional JS -->
+<script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}?312"></script>
+<script src="{{ url_for('static', filename='js/blocs.min.js') }}?742"></script>
+<script src="{{ url_for('static', filename='js/lazysizes.min.js') }}" defer></script>
+<!-- Additional JS END -->
+
+
+</body>
+</html>

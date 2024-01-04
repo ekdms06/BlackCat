@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+	<meta name="robots" content="index, follow">
+    <link rel="shortcut icon" type="image/png" href="{{ url_for('static', filename='img/favicon-16x16.png') }}">
+
+    <!-- 파비콘 이미지 -->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/animate.min.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/all.min.css') }}">
+	<!-- css 폴더 지정 안되면 링크로 바꿀게 알려줘-->
+    <title>Home</title>
+
+
+    
+<!-- Analytics -->
+ 
+<!-- Analytics END -->
+    
+</head>
+<body>
+
+<!-- Preloader -->
+<div id="page-loading-blocs-notifaction" class="page-preloader"></div>
+<!-- Preloader END -->
+
+
+<!-- Main container -->
+<div class="page-container">
+	<!-- nav바 부분 -->
+<!-- bloc-0 -->
+<div class="bloc none l-bloc" id="bloc-0">
+	<div class="container bloc-no-padding">
+		<div class="row mt-lg-3 mb-lg-3 mt-1 mb-1 mt-sm-2 mb-sm-2 mt-md-3 mb-md-3 ps-2 pe-2 ps-lg-3 pe-lg-3">
+			<div class="align-self-center order-sm-1 order-1 col-4 ps-0 pe-0 col-lg-2 col-md-2 col-sm-4">
+				<p class="mb-0">
+					<picture>
+						<source type="image/webp" srcset="{{ url_for('static', filename='img/black_cat.webp') }}">
+						<img class="img-fluid img-style" src="{{ url_for('static', filename='img/black_cat.png') }}" alt="black_cat" width="40" height="41">
+					</picture>
+					<a class="mini-text-logo bold object-hidden" href="./">검은고양이</a><br>
+				</p>
+			</div>
+			<div class="align-self-center order-sm-3 order-lg-2 order-md-2 order-3 col-lg-8 col-md-8 pe-0 ps-0 text-sm-end col-sm-8 col-8">
+				<nav class="navbar navbar-light row flex-column navbar-expand-md hover-open-submenu navigation-toggle-right" role="navigation">
+					<div class="container-fluid flex-column">
+						<button id="nav-toggle" type="button" class="ui-navbar-toggler navbar-toggler border-0 p-0" aria-expanded="false" aria-label="Toggle navigation" data-bs-toggle="collapse" data-bs-target=".navbar-10760">
+							<span class="navbar-toggler-icon"><svg height="32" viewBox="0 0 32 32" width="32"><path data-custom-classes="" class="svg-menu-icon   " d="m2 9h28m-28 7h28m-28 7h28"></path></svg></span>
+						</button>
+						<div class="collapse navbar-collapse navbar-36370 fullscreen-nav open-down navbar-10760">
+							<ul class="site-navigation nav navbar-nav mx-auto justify-content-center">
+								<li class="nav-item">
+									<a href="{{ url_for('back_to_index') }}" class="nav-link">Home</a>
+								</li>
+								<li class="nav-item">
+									<a href="{{ url_for('about') }}" class="nav-link a-btn">About</a>
+								</li>
+								<li class="nav-item">
+									<a href="{{ url_for('ai') }}" class="a-btn nav-link">Ai</a>
+								</li>
+								{% if session['username'] %}
+									<li class="nav-item">
+										<a class="nav-link a-btn">환영합니다, {{ session['username'] }}님!</a>
+									</li>
+									<li class="nav-item">
+										<a href="{{ url_for('logout') }}" class="nav-link a-btn">로그아웃</a>
+									</li>
+								{% else %}
+									<li class="nav-item">
+										<a href="{{ url_for('login') }}" class="nav-link a-btn">로그인</a>
+									</li>
+									<li class="nav-item">
+										<a href="{{ url_for('signup') }}" class="nav-link a-btn">회원가입</a>
+									</li>
+								{% endif %}
+
+								{% if session.get('is_admin') %}
+									<li class="nav-item">
+										<a href="{{ url_for('admin') }}" class="nav-link a-btn">관리자 페이지</a>
+									</li>
+								{% endif %}
+							</ul>
+						</div>
+					</div>
+				</nav>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- bloc-0 END -->
+
+<!-- header부분 -->
+<!-- bloc-1 -->
+<div class="bloc bgc-5803 d-bloc" data-bs-theme="dark" id="bloc-1">
+	<div class="container bloc-lg">
+		<div class="row">
+			<div class="text-start align-self-center col-lg-6 offset-lg-3 offset-md-2 col-md-8">
+				<p class="mini-subtitle bold text-center tc-5545">
+					인공지능 알고리즘을 활용한
+				</p>
+				<h1 class="bold text-center tc-7747">
+					상태 감지 프로그램
+				</h1>
+				<p class="mini-large-p text-center mt-3 mb-4 tc-3131">
+					환자의 건강 상태, 인공지능 자동 감지, 보호자에게 <br>자동 연락 시스템
+				</p>
+				<div class="text-center">
+					<a href="{{ url_for('ai') }}" class="btn btn-d btn-sq btn-lg mb-2 me-2 me-lg-2 button-primary btn-style" id="dls">인공지능&nbsp;</a>
+					<a href="{{ url_for('index') }}" class="btn btn-d btn-sq btn-lg mb-2 black-button">WEB CAM&nbsp;</a>
+				</div>
+			</div>
+		</div>
+		<div class="row mt-5">
+			<div class="col">
+				<picture>
+					<source type="image/webp" srcset="{{ url_for('static', filename='img/lazyload-ph.png') }}" data-srcset="{{ url_for('static', filename='img/main_image.webp') }}">
+					<img src="{{ url_for('static', filename='img/lazyload-ph.png') }}" data-src="{{ url_for('static', filename='img/main_image.png') }}" class="img-fluid mx-auto d-block global-radius lazyload" alt="mini wide-image" width="704" height="394">
+				</picture>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- bloc-1 END -->
+<!-- 주요기능 소계 부분 section-->
+<!-- bloc-2 -->
+<div class="bloc bgc-7747 l-bloc" data-bs-theme="light" id="bloc-2">
+	<div class="container bloc-lg">
+		<div class="row"> 
+			<div class="text-start col-lg-5 col-md-6 mb-sm-5 mb-5 mb-md-0 align-self-start col-sm-11">
+				<p class="mb-4">
+					SHORT SUBTITLE
+				</p>
+				<p class="mini-subtitle text-start tc-779 bold">
+				</p>
+				<h2 class="bold tc-5803">
+					주요기능
+				</h2>
+				<p class="text-start mt-3 mb-3 mini-large-p tc-4497 p-bloc-2-style">
+					1. 실시간 환자 모니터링<br><br>2. 관리자 페이지를 통한 효율적인 환자관리<br><br>3. 위급시에 보호자에게 즉시 연락<br>
+				</p>
+				<p class="mb-0 mini-large-p text-start">
+					<a href="./"></a>
+				</p>
+			</div>
+			<div class="col-md-6 col-lg-6 offset-lg-1 col-sm-12">
+				<div class="card mb-3 bgc-3131 border-0 global-radius">
+					<div class="card-body mini-features-big-cards bgc-3131">
+						<p class="mt-2 mb-2">
+							<span class="mini-feature-number mini-stat-gradient bold">주요 타겟층</span>
+						</p>
+						<p class="mb-0 tc-4497 p-style">
+							환자의 보호자, 관리자(사회복지사)
+						</p>
+					</div>
+				</div>
+				<div class="card border-0 bgc-3131 global-radius">
+					<div class="card-body mini-features-big-cards">
+						<p class="mt-2 mb-2">
+							<span class="mini-feature-number mini-stat-gradient bold">개발환경</span>
+						</p>
+						<p class="mb-0 p-style">
+							html css python database was
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- bloc-2 END -->
+
+
+<!-- section2번쨰 부분 -->
+<!-- bloc-3 -->
+<div class="bloc bgc-5803 mini-large-p d-bloc" data-bs-theme="dark" id="bloc-3">
+	<div class="container bloc-lg">
+		<div class="row">
+			<div class="text-start align-self-center mb-sm-5 mb-5 mb-md-0 order-lg-2 order-md-2 offset-lg-0 col-lg-6 ps-lg-5 col-md-6">
+				<h1 class="bold tc-7747">
+					구조도
+				</h1>
+				<p class="mini-large-p mt-3 mb-4 tc-3131">
+					1 cctv에서 움직임 감지<br><br>2 인공지능 상태 파악<br><br>3 119 호출 환자 후송<br>
+				</p>
+			</div>
+			<div class="text-start col-lg-6 offset-lg-0 order-lg-1 order-md-1 col-md-6">
+				<picture>
+					<source type="image/webp" srcset="{{ url_for('static', filename='img/lazyload-ph.png') }}" data-srcset="{{ url_for('static', filename='img/main_image_2.webp') }}">
+					<img src="{{ url_for('static', filename='img/lazyload-ph.png') }}" data-src="{{ url_for('static', filename='img/main_image_2.png') }}" class="img-fluid mx-auto d-block full-width global-radius lazyload" alt="placeholder image-sq" width="558" height="396">
+				</picture>
+				<!-- 구조도 사진 -->
+			</div>
+		</div>
+	</div>
+</div>
+<!-- bloc-3 END -->
+<!-- 개발자 팀원 소계 -->
+<!-- bloc-4 -->
+<div class="bloc bgc-7747 l-bloc" data-bs-theme="light" id="bloc-4">
+	<div class="container bloc-lg">
+		<div class="row">
+			<div class="col-lg-3 col-md-6 mb-5 col-sm-6 mb-lg-0 text-start animated rollIn" data-appear-anim-style="rollIn">
+				<picture>
+					<source type="image/webp" srcset="{{ url_for('static', filename='img/lazyload-ph.png') }}" data-srcset="{{ url_for('static', filename='img/예준.jpg') }}">
+					<img src="{{ url_for('static', filename='img/lazyload-ph.png') }}" data-src="{{ url_for('static', filename='img/placeholder-image.png') }}" class="img-fluid mx-auto d-block mb-4 global-radius lazyload" alt="placeholder image" width="100" height="100">
+				</picture>
+				<h4 class="bold text-start tc-6833">
+					yeajun
+				</h4>
+				<p class="mb-4 text-start tc-4497">
+					frontend developer and designer 
+					<br>skill : html css js 
+				</p><a href="{{ url_for('index') }}" class="btn btn-d btn-sq white-button">Button</a>
+			</div>
+			<div class="col-lg-3 col-md-6 mb-5 col-sm-6 mb-lg-0 text-start animated rollIn" data-appear-anim-style="rollIn">
+				<picture>
+					<source type="image/webp" srcset="{{ url_for('static', filename='img/lazyload-ph.png') }}" data-srcset="{{ url_for('static', filename='img/준서.png') }}">
+					<img src="{{ url_for('static', filename='img/lazyload-ph.png') }}" data-src="{{ url_for('static', filename='img/placeholder-image.png') }}" class="img-fluid mx-auto d-block mb-4 global-radius lazyload" alt="placeholder image" width="267" height="187">
+				</picture>
+				<h4 class="bold text-start tc-6833">
+					Junseo Lee
+				</h4>
+				<p class="mb-4 text-start tc-4497">
+					backend developer and ai database
+					<br>skill : database python flask
+				</p><a href="{{ url_for('index') }}" class="btn btn-d btn-sq white-button">Button</a>
+			</div>
+			<div class="col-lg-3 col-md-6 mb-5 col-sm-6 mb-lg-0 mb-md-0 mb-sm-0 text-start animated rollIn" data-appear-anim-style="rollIn">
+				<picture>
+					<source type="image/webp" srcset="{{ url_for('static', filename='img/lazyload-ph.png') }}" data-srcset="{{ url_for('static', filename='img/다은.jpg') }}">
+					<img src="{{ url_for('static', filename='img/lazyload-ph.png') }}" data-src="{{ url_for('static', filename='img/placeholder-image.png') }}" class="img-fluid mx-auto d-block mb-4 global-radius lazyload" alt="placeholder image" width="267" height="187">
+				</picture>
+				<h4 class="bold text-start tc-6833">
+					Yoo Da-eun
+				</h4>
+				<p class="mb-4 text-start tc-4497">
+					github management Research
+				</p><a href="{{ url_for('index') }}" class="btn btn-d btn-sq white-button">Button</a>
+			</div>
+			<div class="col-lg-3 col-md-6 col-sm-6 text-start animated rollIn" data-appear-anim-style="rollIn">
+				<picture>
+					<source type="image/webp" srcset="{{ url_for('static', filename='img/lazyload-ph.png') }}" data-srcset="{{ url_for('static', filename='img/도인.jpg') }}">
+					<img src="{{ url_for('static', filename='img/도인.jpg') }}" data-src="{{ url_for('static', filename='img/도인.jpg') }}" class="img-fluid mx-auto d-block mb-4 global-radius lazyload" alt="placeholder image" width="267" height="187">
+				</picture>
+				<h4 class="bold text-start tc-6833">
+					Kim Do-in
+				</h4>
+				<p class="mb-4 text-start tc-4497">
+					Research ppt assistant
+				</p><a href="{{ url_for('index') }}" class="btn btn-d btn-sq white-button">Button</a>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- bloc-4 END -->
+
+<!-- ScrollToTop Button -->
+<button aria-label="Scroll to top button" class="bloc-button btn btn-d scrollToTop" onclick="scrollToTarget('1',this)"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 32 32"><path class="scroll-to-top-btn-icon" d="M30,22.656l-14-13-14,13"/></svg></button>
+<!-- ScrollToTop Button END-->
+
+<!-- footer 가장 및 sns부분 -->
+<!-- bloc-5 -->
+<div class="bloc bgc-5803 d-bloc" id="bloc-5">
+	<div class="container bloc-md-lg">
+		<div class="row row-padding-top">
+			<div class="offset-md-2 col-6 col-md-2 col-sm-3">
+				<div class="text-center">
+					<span class="fab fa-twitter-square icon-xl"></span>
+				</div>
+			</div>
+			<div class="col-6 col-md-2 col-sm-3">
+				<div class="text-center">
+					<span class="fab fa-facebook-square icon-xl"></span>
+				</div>
+			</div>
+			<div class="col-6 col-md-2 col-sm-3">
+				<div class="text-center">
+					<span class="fab fa-instagram icon-xl"></span>
+				</div>
+			</div>
+			<div class="col-6 col-md-2 col-sm-3">
+				<div class="text-center">
+					<span class="fa fa-envelope-square icon-xl"></span>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- bloc-5 END -->
+
+</div>
+<!-- Main container END -->
+    
+
+
+<!-- Additional JS -->
+<script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/blocs.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/lazysizes.min.js') }}" defer></script>
+
+</body>
+</html>
