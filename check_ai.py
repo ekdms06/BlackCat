@@ -5,13 +5,17 @@ from werkzeug.security import generate_password_hash, check_password_hash
 import cv2
 import mediapipe as mp
 import os
+import time
+import threading
 
 
 from models import db 
 from flask import flash
 from functools import wraps
 from twilio.rest import Client
-from flask_login import login_required
+from flask_login import login_required 
+from plyer import notification
+
 
 
 
@@ -214,6 +218,25 @@ def login_required(f):
     return decorated_function
 
 
+can_send_notification = True
+
+def send_notification():
+    global can_send_notification
+    if can_send_notification:
+        notification.notify(
+            title='긴급 알림',
+            message='[Web 발신] 생활중 이상 동작이 감지되어 긴급 알림을 발송해드립니다.',
+            timeout=1000  # 알림이 표시되는 시간(초)
+        )
+        can_send_notification = False  # 알림을 보낸 후에는 플래그를 False로 설정
+        threading.Timer(60, reset_flag).start()  # 1분 후에 플래그를 다시 True로 설정하는 타이머 시작
+
+def reset_flag():
+    global can_send_notification
+    can_send_notification = True  # 플래그를 다시 True로 설정
+
+
+
 mp_drawing=mp.solutions.drawing_utils  
 mp_pose=mp.solutions.pose
 
@@ -268,13 +291,16 @@ def generate_frames():
                         if head_to_feet_dist < h/6:  
                             cv2.putText(image,'But maybe just lying down',(50,100),cv2.FONT_HERSHEY_SIMPLEX ,1,(255,0,0), 4,cv2.LINE_AA)
                         else:
+                            
                             cv2.putText(image,'Person has fallen',(50,50),cv2.FONT_HERSHEY_SIMPLEX ,1,(255,0,0), 4,cv2.LINE_AA)
     
                             # 가입한 사용자의 전화번호를 가져오기 
-                            user_hp = User.query.filter_by(username=session['username']).first().hp
+                            #user_hp = User.query.filter_by(username=session['username']).first().hp
 
                             # SMS 전송 
-                            send_sms(user_hp, "경고: 사용자가 쓰러졌습니다. 확인하세요.")
+                            #send_sms(user_hp, "경고: 사용자가 쓰러졌습니다. 확인하세요.")
+                            send_notification()
+
 
 
                     elif hip_to_knee_dist > h/6 and knee_to_ankle_dist < h/6:  # 앉은 상태 판별 조건 추가
